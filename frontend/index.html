@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video summarizer</title>
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <!--bootstrap CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        
+        <!-- fontawesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <script src="https://kit.fontawesome.com/a62e405d89.js" crossorigin="anonymous"></script>
+        <script src="jquery.min.js"></script>
+        <script src="popper.min.js"></script>
+        <!-- custom stylesheet -->
+        <link rel="stylesheet" href="./style.css">
+        <!--swiperjs cdn-->
+        <!-- <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+        /> -->
+    </head>
+    <body>
+        <nav style="position:fixed;">
+            <div class="container nav_container">
+                <a href="index.html" class="nav_logo"><img src="images/tecsetco.png" alt="nav logo"></a>
+                <ul class="nav_links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#header">About</a></li>
+                    <li><a href="#Contact">Contact Us</a></li>
+                    
+                </ul>
+                <ul class="nav_socials">
+                    <li><a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="https://youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+                <button class="nav_toggle-btn" id="nav_toggle-open"><i class="fa-solid fa-bars"></i></button>
+                <button class="nav_toggle-btn" id="nav_toggle-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </nav>
+        
+        <!-- end of navbar -->
+        
+        
+        <header>
+            <div class="container header_container">
+                <div class="left">
+                    <div id="headingtop" class="focus-in-contract-bck">
+                        TecSetCo
+                    </div>
+
+                   
+                </div>
+                <div class="right">
+                    <div class="header_head">
+                </div>
+                <div class="container search_container">
+                    <form action="https://www.google.com/search" method="get" class="search_bar">
+                        <input type="text" placeholder="Search description" name="query">
+                        <button type="submit"><img src="images/search.png" alt=""></button>
+                    </form>
+                </div>
+            </div>
+            </div>
+           </header>
+        <!-- end of header -->
+        <section id="Contact">
+        <footer>
+            <div class="container footer_container">
+                <div class="footer_head">
+                    <h2 class="footer_title">support@gmail.com</h2>
+                    <a href="mailto:support@gmail.com" class="footer_btn"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+                </div>
+                <ul class="footer_links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#header">About</a></li>
+                    <li><a href="#Contact">Contact Us</a></li>
+                    
+                </ul>
+            </div>
+        </footer>
+    </section>
+        <!-- end of footer -->
+
+        <script src="main.js"></script>
+</body>
+</html>
