@@ -47,6 +47,7 @@ body {
    background: var(--color-bg-3);
    color: var(--color-bg-light);
    line-height: 1.7;
+   overflow-y: hidden;
 }
 h1,h2 {
    line-height: 1.1;
@@ -159,8 +160,7 @@ header {
     height: 100vh;
     position: relative;
     top: 0;
-    background: linear-gradient(var(--color-bg-3),var(--color-bg-1));
-    overflow: hidden;
+    background: linear-gradient(var(--color-bg-3),var(--color-bg-1));    
 }
 .search_container {
     padding: 5rem;
@@ -168,8 +168,8 @@ header {
     align-items: center;
     justify-content: center;
 }
-.search_bar {
-   
+
+.search_bar {   
     margin-top: 8rem;
     width: 100%;
     max-width: 700px;
@@ -228,7 +228,6 @@ header {
 .header_image-sm {
     width: 28rem;
     height: 28rem;
-    overflow: hidden;
     position: absolute;
     left: 6rem;
     top: 6rem;
@@ -367,4 +366,38 @@ header {
       opacity: 1;
     }
   }
-  
+#results {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+#results::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+#results{
+    overflow-y: auto !important;    
+    height:80vh;
+    padding:10px;
+    margin-top: 25px;
+}
+#results ul li{
+    
+    box-shadow: 0 0 10px black;
+    border-radius: 20px;  
+    display: grid;
+    columns: 2;
+    padding:15px;
+    margin-top: 10px;
+}
+#results ul li img{
+    width:150px;
+    border-radius: 20px;
+    display: inline;
+}
+#results ul li h3{
+    display: inline-block;
+}
+#results ul li p{
+    display: inline;
+}

@@ -53,44 +53,59 @@
         <header>
             <div class="container header_container">
                 <div class="left">
-                    <div id="headingtop" class="focus-in-contract-bck">
+                    <!-- <div id="headingtop" class="focus-in-contract-bck">
                         SummitUp
-                    </div>
+                    </div> -->
                 </div>
                 <div class="right">
                     <div class="header_head">
                 </div>
-                <div class="container search_container">
-                    <form action="https://www.google.com/search" method="get" class="search_bar">
+                <div id="searchbarparent" class="container search_container">
+                    <div id="searchbarchild" class="search_bar">
                         <input type="text" placeholder="Search description" name="query">
-                        <button type="submit"><img src={% static "images/search.png" %} alt=""></button>
-                    </form>
-                </div>
+                        <button type="button" onclick="searchResults();"><img src={% static "images/search.png" %} alt=""></button>
+                    </div>
+                </div>                                
             </div>
+
+            <div id="results" style="display: none;">
+                <ul>
+                    <li>
+                        <img src={% static "images/tecsetco.png" %} alt="">
+                        <h3>Title i am the video</h3>
+                        <p>ffdsfkldskfldklkdgfdg</p>
+                    </li>
+                    <li>
+                        <img src={% static "images/tecsetco.png" %} alt="">
+                        <h3>Title i am the video</h3>
+                        <p>ffdsfkldskfldklkdgfdg</p>
+                    </li>
+                    <li>
+                        <img src={% static "images/tecsetco.png" %} alt="">
+                        <h3>Title i am the video</h3>
+                        <p>ffdsfkldskfldklkdgfdg</p>
+                    </li>
+                    <li>
+                        <img src={% static "images/tecsetco.png" %} alt="">
+                        <h3>Title i am the video</h3>
+                        <p>ffdsfkldskfldklkdgfdg</p>
+                    </li>
+                    <li>
+                        <img src={% static "images/tecsetco.png" %} alt="">
+                        <h3>Title i am the video</h3>
+                        <p>ffdsfkldskfldklkdgfdg</p>
+                    </li>
+                </ul>
             </div>
         </header>
+        
         <!-- end of header -->
         
     <!-- <video width="320" height="240" controls>
         <source src={% static "/media/video.mp4" %} type="video/mp4">      
       Your browser does not support the video tag.
       </video>     -->
-        <section id="Contact">
-        <footer>
-            <div class="container footer_container">
-                <div class="footer_head">
-                    <h2 class="footer_title">support@gmail.com</h2>
-                    <a href="mailto:support@gmail.com" class="footer_btn"><i class="fa-solid fa-square-arrow-up-right"></i></a>
-                </div>
-                <ul class="footer_links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#header">About</a></li>
-                    <li><a href="#Contact">Contact Us</a></li>
-                    
-                </ul>
-            </div>
-        </footer>
-    </section>
+       
         <!-- end of footer -->
 
         <script src={% static "js/main.js" %}></script>
