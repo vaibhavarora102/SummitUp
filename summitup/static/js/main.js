@@ -13,7 +13,7 @@ function searchResults(){
 setTimeout(function(){
     document.getElementById("headingtop").style.display="none";
     document.getElementById("maindiv").style.display="block";
-},1000);
+},3000);
 
 $('#i_file').change( function(event) {
     var tmppath = URL.createObjectURL(event.target.files[0]);
