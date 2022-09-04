@@ -2,6 +2,7 @@ from django.core.files.storage import FileSystemStorage
 from django.http import *
 from django.shortcuts import *
 import sqlite3
+import random
 from django.views.decorators.csrf import *
 
 import speech_recognition as sr
@@ -17,7 +18,6 @@ from templates import *
 
 def index(request):
     return render(request, "index.html")
-
 
 # create a speech recognition object
 r = sr.Recognizer()
@@ -88,3 +88,21 @@ def audioToText(request):
         print(summarizeTheText(res))
 
     return HttpResponse("Done")
+
+@csrf_exempt
+def uploadVideo(request):
+    # Step1 upload Photo
+    path=""
+    if request.method == "POST":
+    # if the post request has a file under the input name 'document', then save the file.
+        request_file = request.FILES['vdo']
+        if request_file:
+            # create a new instance of FileSystemStorage
+            fs = FileSystemStorage()
+            file = fs.save(request_file.name, request_file)
+            # the fileurl variable now contains the url to the file. This can be used to serve the file when needed.                        
+            video = moviepy.editor.VideoFileClip(file)
+            audio = video.audio
+            audio.write_audiofile(r"my_result.wav")
+            res=summarizeTheText(get_large_audio_transcription(r"my_result.wav"))  
+    return render(request, "summary.html", {"smry": summarizeTheText(res).split(' ')})

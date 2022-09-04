@@ -46,6 +46,7 @@
                 <button class="nav_toggle-btn" id="nav_toggle-close"><i class="fa-solid fa-xmark"></i></button>
             </div>
         </nav>
+
         
         <!-- end of navbar -->
         
@@ -53,19 +54,42 @@
         <header>
             <div class="container header_container">
                 <div class="left">
-                    <!-- <div id="headingtop" class="focus-in-contract-bck">
+                    <div id="headingtop" class="focus-in-contract-bck">
                         SummitUp
-                    </div> -->
+                    </div>
                 </div>
                 <div class="right">
                     <div class="header_head">
                 </div>
-                <div id="searchbarparent" class="container search_container">
+                <div id="maindiv" style="display: none;">
+                    <div style="text-align: center;">
+
+                    
+                    <img src={% static "images/logo.png" %} class="mainlogo">
+                </div>
+                <div  id="searchbarparent" class="container search_container">
                     <div id="searchbarchild" class="search_bar">
-                        <input type="text" placeholder="Search description" name="query">
+                        <input type="text" name="query" placeholder="Search Videos :   Blockchain, DevOps.....">
                         <button type="button" onclick="searchResults();"><img src={% static "images/search.png" %} alt=""></button>
                     </div>
-                </div>                                
+                </div>    
+
+                
+                <div style="text-align: center !important; margin-top: 60px;">
+                    <span style="font-weight: 600; font-size: 1.3rem;"><i>You can also summarize your videos, directly</i></span><br>
+                    <br>
+                           
+                    <form id="myform" action="uploadVideo/" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div style="text-align:center;">
+                            <span style="font-weight: 600; font-size: 1.3rem;"><i>Summarize your Video</i></span><br>
+                            <input type="file" name="vdo" class="mybtn" accept="video/mp4,video/x-m4v,video/*"></button>                        
+                            <input type="submit" value="Summarize" class="mybtn">
+                        </div>
+                    </form>
+    
+                </div>
+            </div>
             </div>
 
             <div id="results" style="display: none !important;">

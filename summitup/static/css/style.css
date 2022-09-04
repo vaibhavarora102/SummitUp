@@ -47,7 +47,6 @@ body {
    background: var(--color-bg-3);
    color: var(--color-bg-light);
    line-height: 1.7;
-   overflow-y: hidden;
 }
 h1,h2 {
    line-height: 1.1;
@@ -163,14 +162,14 @@ header {
     background: linear-gradient(var(--color-bg-3),var(--color-bg-1));    
 }
 .search_container {
-    padding: 5rem;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .search_bar {   
-    margin-top: 8rem;
+
     width: 100%;
     max-width: 700px;
     background: rgba(255,255, 255, 0.2);
@@ -396,4 +395,18 @@ header {
 }
 #results ul li div{
     display: inline-block;    
+}
+.mybtn{
+    background-color:#e5a55d;
+    color:#000e17;
+    padding:20px;
+    margin:0 auto;
+    font-weight: 600;
+    border-radius: 40px;
+}
+.mainlogo{
+    width:10rem;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    
 }
