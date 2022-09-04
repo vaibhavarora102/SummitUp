@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index),    
     path("uploadVideo/",uploadVideo),
-    path("AtoT/",audioToText)
+    path("searchresults/",searchresults),
+    path("AtoT/",audioToText),
+    
 ]

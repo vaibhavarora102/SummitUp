@@ -106,3 +106,22 @@ def uploadVideo(request):
             audio.write_audiofile(r"my_result.wav")
             res=summarizeTheText(get_large_audio_transcription(r"my_result.wav"))  
     return render(request, "summary.html", {"smry": summarizeTheText(res).split(' ')})
+
+@csrf_exempt
+def searchresults(request):
+    query=request.GET["query"]
+    finalfile=[]
+    files=os.listdir("transcript")
+    for i in files:
+        with open("transcript\\"+i) as file:
+            data=str(file.read())
+            for keyword in data.split(' '):             
+                if(query.lower() == keyword.lower()):
+                    finalfile.append(i)
+    finalfile=list(set(finalfile))   
+    ll=[]
+    for i in finalfile:
+        ll.append(i.replace(".txt", ".mp4"))
+    for i in ll:
+        print(i)
+    return render(request,"searchresults.html", {"results": ll})

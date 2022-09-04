@@ -68,10 +68,12 @@
                     <img src={% static "images/logo.png" %} class="mainlogo">
                 </div>
                 <div  id="searchbarparent" class="container search_container">
-                    <div id="searchbarchild" class="search_bar">
-                        <input type="text" name="query" placeholder="Search Videos :   Blockchain, DevOps.....">
-                        <button type="button" onclick="searchResults();"><img src={% static "images/search.png" %} alt=""></button>
-                    </div>
+                    
+                    <form id="searchform" class="search_bar" action="searchresults/" method="get">
+                        <input type="text" name="query" id="queryid" placeholder="Search Videos :   Blockchain, DevOps.....">
+                        <button type="submit"><img src={% static "images/search.png" %} alt=""></button>
+                    </form>
+                    
                 </div>    
 
                 
