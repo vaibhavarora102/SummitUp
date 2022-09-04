@@ -9,6 +9,9 @@ SummitUp uses machine learning based approach to summarize the content and give 
 <p ><center>
 <img src="./frontend/images/landingPage.png" width="45%">
 <img src="./frontend/images/videoSearchResults.png" width="45%">
+</center>
+</p><p>
+<center>
 <img src="./frontend/images/summary.png" width="45%">
 </center></p>
 
