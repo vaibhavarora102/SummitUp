@@ -78,7 +78,7 @@ def summarizeTheText(inpt):
 
 def audioToText(request):
     #video path
-    files=os.listdir("static\\media")[:1]
+    files=os.listdir("static\\media")
     for i in files:
         path=r"static\\media\\"+i
         video = moviepy.editor.VideoFileClip(path)

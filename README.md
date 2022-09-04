@@ -6,6 +6,7 @@
 
 SummitUp uses machine learning based approach to summarize the content and give the glimpse of the video lecture. Additionally we have integrated video search engine in which user could search any video by giving description of his/her needs.
 
+
 <center><p >
 <img src="./frontend/images/landingPage.png" width="45%">
 <img src="./frontend/images/videoSearchResults.png" width="45%">

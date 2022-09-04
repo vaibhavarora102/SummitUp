@@ -2,3 +2,7 @@ SpeechRecognition
 pydub~=0.25.1
 moviepy
 transformers
+gunicorn==20.0.4
+whitenoise==5.2.0
+torch
+djangorestframework
