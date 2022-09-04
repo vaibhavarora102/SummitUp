@@ -10,6 +10,8 @@ from pydub import AudioSegment
 from pydub.silence import split_on_silence
 from pydub import AudioSegment
 import moviepy.editor
+from transformers import pipeline
+from transformers import BartTokenizer, BartForConditionalGeneration
 
 from templates import *
 
@@ -62,13 +64,27 @@ def get_large_audio_transcription(path):
     return whole_text
 
 
+def summarizeTheText(inpt):
+    model = BartForConditionalGeneration.from_pretrained("facebook/bart-large-cnn")
+    tokenizer = BartTokenizer.from_pretrained("facebook/bart-large-cnn")
+
+    ARTICLE_TO_SUMMARIZE=inpt
+
+    inputs = tokenizer([ARTICLE_TO_SUMMARIZE], max_length=1024, return_tensors="pt")
+
+    summary_ids = model.generate(inputs["input_ids"], num_beams=2, min_length=0, max_length=20)
+    temp = tokenizer.batch_decode(summary_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
+    return temp
+
 def audioToText(request):
     #video path
-    
-    path=r"C:\\Users\\Rajin\\Downloads\\video.mp4"
-    video = moviepy.editor.VideoFileClip(path)  
-    audio = video.audio
-    filename = os.path.join("audio_chunks", "audio.wav")
-    audio.write_audiofile(r"my_result.wav")
+    files=os.listdir("static\\media")[:1]
+    for i in files:
+        path=r"static\\media\\"+i
+        video = moviepy.editor.VideoFileClip(path)
+        audio = video.audio
+        audio.write_audiofile(r"my_result.wav")
+        res=get_large_audio_transcription(r"my_result.wav")
+        print(summarizeTheText(res))
 
-    return HttpResponse(get_large_audio_transcription(r"my_result.wav"))
+    return HttpResponse("Done")

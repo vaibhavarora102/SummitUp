@@ -366,6 +366,7 @@ header {
       opacity: 1;
     }
   }
+
 #results {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
@@ -377,16 +378,14 @@ header {
 }
 #results{
     overflow-y: auto !important;    
-    height:80vh;
+    height:70vh;     
     padding:10px;
-    margin-top: 25px;
+    margin-top: 25px;    
 }
 #results ul li{
-    
-    box-shadow: 0 0 10px black;
-    border-radius: 20px;  
-    display: grid;
-    columns: 2;
+    display: block;
+    box-shadow: 0 0 10px black;    
+    border-radius: 20px;      
     padding:15px;
     margin-top: 10px;
 }
@@ -395,9 +394,6 @@ header {
     border-radius: 20px;
     display: inline;
 }
-#results ul li h3{
-    display: inline-block;
-}
-#results ul li p{
-    display: inline;
+#results ul li div{
+    display: inline-block;    
 }
