@@ -23,9 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b+2%)t9+y=i78e0-+bc0px#jg*7-a^_w@ap$c278=6jx(gdr%&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = [
+    'http://google.com',
+    'http://hostname.example.com',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000'
+]
 
 
 # Application definition
@@ -120,11 +127,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+
+
+
 STATIC_URL = '/static/'
 # STATIC_ROOT=os.path.join(BASE_DIR,"static")
-
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
 # STATICFILES_DIRS=[os.path.join(BASE_DIR,"static/"),'templ ates',"media"]
 STATICFILES_DIRS=[os.path.join(BASE_DIR,"static/")]
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MMEDIA_ROOT = os.path.join(BASE_DIR, 'media/') # media directory in the root directory
 MEDIA_URL = '/media/'

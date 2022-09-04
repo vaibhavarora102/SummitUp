@@ -1,0 +1,1 @@
+web: gunicorn summitup.wsgi --log-file -
